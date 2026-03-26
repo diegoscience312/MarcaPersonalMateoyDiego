@@ -49,7 +49,7 @@ export default function App() {
         >
 
           {/* ── HERO ── */}
-          <motion.div variants={itemVariants} className="flex justify-center items-center gap-6 md:gap-10 w-full">
+          <motion.div variants={itemVariants} className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 w-full pt-4 md:pt-0">
             {/* Diego */}
             <div className="flex flex-col items-center gap-1.5 flex-1">
               <Avatar name="Diego Ortega" delay={0} />
@@ -63,18 +63,18 @@ export default function App() {
               />
             </div>
 
-            {/* Divider */}
-            <div className="flex flex-col items-center justify-center shrink-0">
-              <div className="w-[1px] h-16 md:h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent rounded-full" />
+            {/* Responsive Divider */}
+            <div className="flex flex-row md:flex-col items-center justify-center shrink-0 w-full md:w-auto py-2 md:py-0">
+              <div className="w-[30%] md:w-[1px] h-[1px] md:h-20 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-white/20 to-transparent rounded-full" />
               <motion.span 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-                className="text-white/30 text-sm md:text-base my-2 font-medium"
+                className="text-white/30 text-sm md:text-base mx-4 md:mx-0 md:my-2 font-medium"
                 style={{ willChange: 'transform' }}
               >
                 &
               </motion.span>
-              <div className="w-[1px] h-16 md:h-20 bg-gradient-to-b from-transparent via-white/20 to-transparent rounded-full" />
+              <div className="w-[30%] md:w-[1px] h-[1px] md:h-20 bg-gradient-to-r md:bg-gradient-to-b from-transparent via-white/20 to-transparent rounded-full" />
             </div>
 
             {/* Mateo */}
@@ -99,7 +99,7 @@ export default function App() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
               <p className="text-xs text-white/40 uppercase tracking-[0.2em] text-center mb-0 font-bold">Herramientas que enseñamos</p>
-              <div className="flex justify-between items-end gap-2 overflow-x-auto pt-6 pb-2 md:pb-0 hide-scrollbar" style={{ scrollbarWidth: 'none' }}>
+              <div className="flex justify-between md:justify-around items-end gap-3 md:gap-2 overflow-x-auto pt-6 pb-2 md:pb-0 hide-scrollbar" style={{ scrollbarWidth: 'none' }}>
                 {tools.map((tool, i) => (
                   <ToolIcon key={tool} name={tool} delay={i * 0.1} />
                 ))}
@@ -118,9 +118,9 @@ export default function App() {
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
                 Diego · Últimos Reels
               </p>
-              <div className="flex gap-3 flex-1">
-                <div className="flex-1"><ContentCard label="Automatiza con n8n + Claude" /></div>
-                <div className="flex-1"><ContentCard label="Claude Code en acción" /></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                <div><ContentCard label="Automatiza con n8n + Claude" /></div>
+                <div><ContentCard label="Claude Code en acción" /></div>
               </div>
             </div>
 
@@ -133,9 +133,9 @@ export default function App() {
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse" />
                 Mateo · Últimos Reels
               </p>
-              <div className="flex gap-3 flex-1">
-                <div className="flex-1"><ContentCard label="UGC con IA step by step" /></div>
-                <div className="flex-1"><ContentCard label="CapCut + Higgsfield tips" /></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                <div><ContentCard label="UGC con IA step by step" /></div>
+                <div><ContentCard label="CapCut + Higgsfield tips" /></div>
               </div>
             </div>
           </motion.div>
@@ -180,3 +180,4 @@ export default function App() {
     </div>
   )
 }
+
