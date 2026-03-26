@@ -6,7 +6,7 @@ const toolImages = {
   'ManyChat':   '/images/manychat.png',
   'CapCut':     '/images/capcut.png',
   'Wavvy':      '/images/weavy.png',
-  'Higgsfield': '/images/higgsfield.png',
+  'Higgsfield': '/images/Higgsfield.png',
 }
 
 export default function ToolIcon({ name, delay = 0 }) {
